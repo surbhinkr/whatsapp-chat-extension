@@ -1,5 +1,3 @@
-import { Page, Layout, Card, Text, BlockStack, Banner, List } from "@shopify/polaris";
-import { TitleBar } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
 
 export const loader = async ({ request }) => {
@@ -9,69 +7,51 @@ export const loader = async ({ request }) => {
 
 export default function Index() {
   return (
-    <Page>
-      <TitleBar title="WhatsApp Chat Button" />
-      <Layout>
-        <Layout.Section>
-          <Banner tone="success" title="You're all set up!">
-            <p>
-              Your WhatsApp Chat Button is ready to configure. Follow the
-              steps below to add it to your storefront.
-            </p>
-          </Banner>
-        </Layout.Section>
+    <s-page heading="WhatsApp Chat Button">
+      <s-banner tone="success" heading="You're all set up!">
+        <s-paragraph>
+          Your WhatsApp Chat Button is ready to configure. Follow the steps
+          below to add it to your storefront.
+        </s-paragraph>
+      </s-banner>
 
-        <Layout.Section>
-          <Card>
-            <BlockStack gap="400">
-              <Text as="h2" variant="headingMd">
-                How to enable your WhatsApp Chat Button
-              </Text>
-              <List type="number">
-                <List.Item>
-                  Go to <strong>Online Store → Themes</strong> in your
-                  Shopify admin.
-                </List.Item>
-                <List.Item>
-                  Click <strong>Customize</strong> on your active theme.
-                </List.Item>
-                <List.Item>
-                  In the theme editor, click{" "}
-                  <strong>App embeds</strong> (puzzle-piece icon) in the
-                  left sidebar.
-                </List.Item>
-                <List.Item>
-                  Find <strong>WhatsApp Chat Button</strong> and toggle it
-                  on.
-                </List.Item>
-                <List.Item>
-                  Enter your WhatsApp business number (with country code,
-                  no "+") and customize your greeting message, button
-                  color, size, and position.
-                </List.Item>
-                <List.Item>
-                  Click <strong>Save</strong> in the theme editor. Your
-                  button will now appear on your storefront!
-                </List.Item>
-              </List>
-            </BlockStack>
-          </Card>
-        </Layout.Section>
+      <s-section heading="How to enable your WhatsApp Chat Button">
+        <s-ordered-list>
+          <s-list-item>
+            Go to <s-text weight="bold">Online Store → Themes</s-text> in
+            your Shopify admin.
+          </s-list-item>
+          <s-list-item>
+            Click <s-text weight="bold">Customize</s-text> on your active
+            theme.
+          </s-list-item>
+          <s-list-item>
+            In the theme editor, click{" "}
+            <s-text weight="bold">App embeds</s-text> (puzzle-piece icon)
+            in the left sidebar.
+          </s-list-item>
+          <s-list-item>
+            Find <s-text weight="bold">WhatsApp Chat Button</s-text> and
+            toggle it on.
+          </s-list-item>
+          <s-list-item>
+            Enter your WhatsApp business number (with country code, no
+            "+") and customize your greeting message, button color, size,
+            and position.
+          </s-list-item>
+          <s-list-item>
+            Click <s-text weight="bold">Save</s-text> in the theme editor.
+            Your button will now appear on your storefront!
+          </s-list-item>
+        </s-ordered-list>
+      </s-section>
 
-        <Layout.Section>
-          <Card>
-            <BlockStack gap="200">
-              <Text as="h2" variant="headingMd">
-                Need help?
-              </Text>
-              <Text as="p" variant="bodyMd">
-                If your button doesn't appear after enabling it, try
-                refreshing your storefront or clearing your browser cache.
-              </Text>
-            </BlockStack>
-          </Card>
-        </Layout.Section>
-      </Layout>
-    </Page>
+      <s-section heading="Need help?">
+        <s-paragraph>
+          If your button doesn't appear after enabling it, try refreshing
+          your storefront or clearing your browser cache.
+        </s-paragraph>
+      </s-section>
+    </s-page>
   );
 }
