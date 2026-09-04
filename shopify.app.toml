@@ -15,18 +15,18 @@ redirect_urls = [ "https://whatsapp-chat-extension-production.up.railway.app/aut
 [webhooks]
 api_version = "2025-01"
 
-  [[webhooks.subscriptions]]
-  topics = ["customers/data_request"]
+    [[webhooks.subscriptions]]
+  compliance_topics = ["customers/data_request"]
   uri = "/webhooks/customers/data_request"
 
   [[webhooks.subscriptions]]
-  topics = ["customers/redact"]
+  compliance_topics = ["customers/redact"]
   uri = "/webhooks/customers/redact"
 
   [[webhooks.subscriptions]]
-  topics = ["shop/redact"]
+  compliance_topics = ["shop/redact"]
   uri = "/webhooks/shop/redact"
-
+  
   [[webhooks.subscriptions]]
   uri = "/webhooks/app/uninstalled"
   topics = [ "app/uninstalled" ]
@@ -36,5 +36,4 @@ api_version = "2025-01"
   topics = [ "app/scopes_update" ]
 
 [build]
-include_config_on_deploy = true
 automatically_update_urls_on_dev = true
