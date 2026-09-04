@@ -1,0 +1,23 @@
+{% if block.settings.enable_button %}
+<a id="whatsapp-chat-btn" href="https://wa.me/{{ block.settings.phone_number }}?text={{ block.settings.prefill_message | url_encode }}" target="_blank" rel="noopener" style="position: fixed; {{ block.settings.position }}: 20px; bottom: 20px; background-color: {{ block.settings.button_color }}; width: {{ block.settings.button_size }}px; height: {{ block.settings.button_size }}px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); text-decoration: none;">
+  <img src="{{ 'whatsapp-icon.svg' | asset_url }}" alt="WhatsApp" width="60%" height="60%">
+</a>
+{% endif %}
+
+{% schema %}
+{
+  "name": "WhatsApp Chat Button",
+  "target": "body",
+  "settings": [
+    { "type": "text", "id": "phone_number", "label": "WhatsApp number (with country code, no +)" },
+    { "type": "text", "id": "prefill_message", "label": "Default message", "default": "Hi, I have a question about your store!" },
+    { "type": "color", "id": "button_color", "label": "Button color", "default": "#25D366" },
+    { "type": "range", "id": "button_size", "label": "Button size", "min": 40, "max": 100, "step": 5, "default": 60 },
+    { "type": "select", "id": "position", "label": "Position", "options": [
+      { "value": "left", "label": "Bottom left" },
+      { "value": "right", "label": "Bottom right" }
+    ], "default": "right" },
+    { "type": "checkbox", "id": "enable_button", "label": "Enable button", "default": true }
+  ]
+}
+{% endschema %}
