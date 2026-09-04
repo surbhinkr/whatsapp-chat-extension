@@ -2,7 +2,7 @@
 
 client_id = "94db1839edf3824ff838370e82bdc8bf"
 name = "whatsapp-chat-extension"
-application_url = "https://example.com"
+application_url = "https://whatsapp-chat-extension-production.up.railway.app"
 embedded = true
 [webhooks]
 api_version = "2025-01"
@@ -59,7 +59,7 @@ api_version = "2026-10"
   topics = [ "app/scopes_update" ]
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://whatsapp-chat-extension-production.up.railway.app/auth/callback" ]
 
 [build]
 include_config_on_deploy = true
